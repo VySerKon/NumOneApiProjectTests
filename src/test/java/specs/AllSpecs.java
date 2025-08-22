@@ -8,7 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-public class SpecSpecs {
+public class AllSpecs {
 
     public static RequestSpecification requestSpec = new RequestSpecBuilder()
             .addFilter(CustomAllureListener.withCustomTemplates())

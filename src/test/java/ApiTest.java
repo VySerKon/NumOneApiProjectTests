@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import specs.SpecSpecs;
+import specs.AllSpecs;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -40,12 +40,12 @@ public class ApiTest extends ApiTestBase {
     void findNameForAllUsers(int userId, String hisName) {
         List<UserData> users = step("Получаем список пользователей", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .queryParam("page", 2)
                         .when()
                         .get("/users")
                         .then()
-                        .spec(SpecSpecs.response200)
+                        .spec(AllSpecs.response200)
                         .extract()
                         .jsonPath()
                         .getList("data", UserData.class)
@@ -65,22 +65,22 @@ public class ApiTest extends ApiTestBase {
     void checkUserCreation() {
         UserRequest userRequest = step("Создаём тестового пользователя", () ->
                 UserRequest.builder()
-                        .name("Shiza")
-                        .job("Superman")
+                        .name("Ivan")
+                        .job("Tester")
                         .build());
         UserResponse response = step("Отправляем POST-запрос", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .body(userRequest)
                         .when()
                         .post("/users")
                         .then()
-                        .spec(SpecSpecs.response201)
+                        .spec(AllSpecs.response201)
                         .extract()
                         .as(UserResponse.class));
         step("Проверяем ответ", () -> {
-            assertEquals("Shiza", response.getName());
-            assertEquals("Superman", response.getJob());
+            assertEquals("Ivan", response.getName());
+            assertEquals("Tester", response.getJob());
             assertNotNull(response.getId());
             assertNotNull(response.getCreatedAt());
         });
@@ -92,12 +92,12 @@ public class ApiTest extends ApiTestBase {
     void setUp() {
         UserRequest userRequest = step("Подготавливаем тестовые данные", () ->
                 UserRequest.builder()
-                        .name("Shiza")
-                        .job("Superman")
+                        .name("Ivan")
+                        .job("Tester")
                         .build());
         UserResponse response = step("Создаём пользователя", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .body(userRequest)
                         .when()
                         .post("/users")
@@ -114,22 +114,22 @@ public class ApiTest extends ApiTestBase {
     void updateUser_PutRequest_ReturnsUpdatedData() {
         UserRequest updatedUser = step("Подготавливаем данные для обновления", () ->
                 UserRequest.builder()
-                        .name("Shiza UPDATED")
-                        .job("Batman")
+                        .name("SuperIvan")
+                        .job("AutoTester")
                         .build());
         UserResponse response = step("Отправляем PUT-запрос", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .body(updatedUser)
                         .when()
                         .put("/users/" + userId)
                         .then()
-                        .spec(SpecSpecs.response200)
+                        .spec(AllSpecs.response200)
                         .extract()
                         .as(UserResponse.class));
         step("Проверяем ответ", () -> {
-            assertEquals("Shiza UPDATED", response.getName());
-            assertEquals("Batman", response.getJob());
+            assertEquals("SuperIvan", response.getName());
+            assertEquals("AutoTester", response.getJob());
             assertNotNull(response.getUpdatedAt());
         });
     }
@@ -138,11 +138,11 @@ public class ApiTest extends ApiTestBase {
     void tearDown() {
         step("Удаляем пользователя с ID: " + userId, () -> {
             given()
-                    .spec(SpecSpecs.requestSpec)
+                    .spec(AllSpecs.requestSpec)
                     .when()
                     .delete("/users/" + userId)
                     .then()
-                    .spec(SpecSpecs.response204);
+                    .spec(AllSpecs.response204);
         });
     }
 
@@ -151,7 +151,7 @@ public class ApiTest extends ApiTestBase {
     void checkUsersListStructure() {
         Response response = step("Отправляем GET-запрос", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .queryParam("page", 2)
                         .when()
                         .get("/users")
@@ -188,7 +188,7 @@ public class ApiTest extends ApiTestBase {
 
         Response response = step("Отправляем POST-запрос на регистрацию", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .body(request)
                         .when()
                         .post("/register")
@@ -206,12 +206,12 @@ public class ApiTest extends ApiTestBase {
     void checkDelayedResponse() {
         List<UserData> users = step("Отправляем GET-запрос с задержкой", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .queryParam("delay", 3)
                         .when()
                         .get("/users")
                         .then()
-                        .spec(SpecSpecs.response200)
+                        .spec(AllSpecs.response200)
                         .extract()
                         .jsonPath()
                         .getList("data", UserData.class));
@@ -229,12 +229,12 @@ public class ApiTest extends ApiTestBase {
 
         UserResponse response = step("Отправляем PATCH-запрос", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .body(partialUpdate)
                         .when()
                         .patch("/users/2")
                         .then()
-                        .spec(SpecSpecs.response200)
+                        .spec(AllSpecs.response200)
                         .extract()
                         .as(UserResponse.class));
 
@@ -249,11 +249,11 @@ public class ApiTest extends ApiTestBase {
     void getNonExistentUser_Returns404() {
         step("Отправляем GET-запрос к несуществующему пользователю", () ->
                 given()
-                        .spec(SpecSpecs.requestSpec)
+                        .spec(AllSpecs.requestSpec)
                         .when()
                         .get("/users/999")
                         .then()
-                        .spec(SpecSpecs.response404));
+                        .spec(AllSpecs.response404));
     }
 }
 
