@@ -58,34 +58,18 @@ API-тесты покрывают следующие сценарии работ
 -   [x] Запрос к несуществующему ресурсу возвращает статус-код 404
 
 
-## <a name="Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/SiriusProject/)">Запуск тестов в Jenkins</a>
-Локально каждая группа тестов запускается командой ```gradle clean <Tag>``` , где ```<Tag>``` - это:
-- web_test
-- cart_test
-- catalog_test
-- filter_test
-- menu_test
-- search_test
+## <a name="Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/ReqrInPrjct/))">Запуск тестов в Jenkins</a>
+Локально тесты запускаются командой ```gradle clean```
 
-Для подобного гибкого запуска тестов в `Jenkins` была реализована параметризованная сборка с возможностью выбора той или иной группы тестов через Choice Parameter = TASK , а также возможность выбора других параметров:
-```
-clean
-${TASK}
--Dselenoid=${SELENOID}
--DbrowserName=${BROWSER_NAME}
--DwindowSize=${WINDOW_SIZE}
--DbrowserVersion=${VERSION_OF_BROWSER}
--Dlogin=${LOGIN}
--Dpassword=${PASSWORD}
-```
-<img src="images/paramscrin.JPG" alt="JenkinsBuildParameters" width="950">
-<img src="images/scrin1.JPG" alt="Jenkinsmain" width="950">
+Удалённо в ```Jenkins``` тесты запускаются командой ```clean ${TASK}```
 
 ## <a name="Allure отчёт">Allure отчёт</a> 
 
-После прогона тестов через страницу запусков в `Jenkins` есть возможность просмотреть результаты выполнения тестов в ` Report`
+После прогона тестов через страницу запусков в `Jenkins` есть возможность просмотреть результаты выполнения тестов в `Allure Report`
 На странице отчёта отображено общее количество запущенных тестов и процентное соотношение успешных и упавших тестов, подкреплённых диаграммой.
+Также на вкладке "Test suites" можно открыть каждый тест и посмотреть детально, на каком этапе возникла ошибка. Помимо этого по результатам теста имеется скриншот и видео из `Selenoid`.
+
 <img src="images/scrin2.JPG" alt="Jenkinsallure1" width="950">
 
-Также на вкладке "Test suites" можно открыть каждый тест и посмотреть детально, на каком этапе возникла ошибка. Помимо этого по результатам теста имеется скриншот и видео из `Selenoid`.
-<img src="images/scrin3.JPG" alt="Jenkinsallure2" width="950">
+
+
