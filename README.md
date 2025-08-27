@@ -1,5 +1,5 @@
 # Проект автоматизации тестирования API на платформе [REQRES.IN](https://reqres.in/)
-<img src="picsandmedia/apilogo.JPG">
+<a href="https://qameta.io/"><img src="picsandmedia/apilogo.JPG"></a>
 
 
 ## Содержание:
