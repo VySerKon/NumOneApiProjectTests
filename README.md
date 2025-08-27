@@ -1,5 +1,5 @@
 # Проект автоматизации тестирования API на платформе [REQRES.IN](https://reqres.in/)
-<a href="https://qameta.io/"><img src="picsandmedia/apilogo.JPG"></a>
+<a href="https://reqres.in/"><img src="picsandmedia/apilogo.JPG"></a>
 
 
 ## Содержание:
@@ -13,13 +13,13 @@
 
 ## <a name="Технологии и инструменты">Технологии и инструменты</a>
 <p  align="center">
-  <code><img width="8%" title="IntelliJ IDEA" src="picsandmedia/IDEA-logo.svg"></code>
-  <code><img width="8%" title="Java" src="picsandmedia/java-logo.svg"></code>
-  <code><img width="8%" title="Rest-Assured" src="picsandmedia/rest-assured-logo.svg"></code>
-  <code><img width="8%" title="Gradle" src="picsandmedia/gradle-logo.svg"></code>
-  <code><img width="8%" title="JUnit5" src="picsandmedia/junit5-logo.svg"></code>
-  <code><img width="8%" title="Allure Report" src="picsandmedia/allure-Report-logo.svg"></code>
-  <code><img width="8%" title="Jenkins" src="picsandmedia/jenkins-logo.svg"></code>
+<code><a href="https://www.jetbrains.com/idea/"><img width="8%" title="IntelliJ IDEA" src="picsandmedia/IDEA-logo.svg"></a></code> 
+<code><a href="https://www.java.com/"><img width="8%" title="Java" src="picsandmedia/java-logo.svg"></a></code> 
+<code><a href="https://rest-assured.io/"><img width="8%" title="Rest-Assured" src="picsandmedia/rest-assured-logo.svg"></a></code> 
+<code><a href="https://gradle.org/"><img width="8%" title="Gradle" src="picsandmedia/gradle-logo.svg"></a></code> 
+<code><a href="https://junit.org/junit5/"><img width="8%" title="JUnit5" src="picsandmedia/junit5-logo.svg"></a></code> 
+<code><a href="https://allurereport.org/"><img width="8%" title="Allure Report" src="picsandmedia/allure-Report-logo.svg"></a></code> 
+<code><a href="https://www.jenkins.io/"><img width="8%" title="Jenkins" src="picsandmedia/jenkins-logo.svg"></a></code> 
  </p>
  
 Для API-тестирования используется `Rest-Assured` с применением подхода Lombok, что позволяет писать чистые и выразительные спецификации с минимальным количеством кода. 
