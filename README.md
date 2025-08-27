@@ -58,12 +58,12 @@ API-тесты покрывают следующие сценарии работ
 -   [x] Запрос к несуществующему ресурсу возвращает статус-код 404
 
 
-## <a name="Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/ReqrInPrjct/))">Запуск тестов в Jenkins</a>
+## <a name="Запуск тестов в Jenkins">Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/ReqrInPrjct/)</a>
 Локально тесты запускаются командой ```gradle clean```
 
 Удалённо в ```Jenkins``` тесты запускаются командой ```clean ${TASK}```
 
-## <a name="Allure отчёт">Allure отчёт</a> 
+## <a name="Allure отчёт">[Allure](https://jenkins.autotests.cloud/job/ReqrInPrjct/1/allure/) отчёт</a> 
 
 После прогона тестов через страницу запусков в `Jenkins` есть возможность просмотреть результаты выполнения тестов в `Allure Report`
 На странице отчёта отображено общее количество запущенных тестов и процентное соотношение успешных и упавших тестов, подкреплённых диаграммой.
