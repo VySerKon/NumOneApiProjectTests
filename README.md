@@ -1,5 +1,5 @@
 # Проект автоматизации тестирования API на платформе [REQRES.IN](https://reqres.in/)
-<img src="picsandmedia/apilogo.JPG">
+<a href="https://reqres.in/"><img src="picsandmedia/apilogo.JPG"></a>
 
 
 ## Содержание:
@@ -13,13 +13,13 @@
 
 ## <a name="Технологии и инструменты">Технологии и инструменты</a>
 <p  align="center">
-  <code><img width="8%" title="IntelliJ IDEA" src="picsandmedia/IDEA-logo.svg"></code>
-  <code><img width="8%" title="Java" src="picsandmedia/java-logo.svg"></code>
-  <code><img width="8%" title="Rest-Assured" src="picsandmedia/rest-assured-logo.svg"></code>
-  <code><img width="8%" title="Gradle" src="picsandmedia/gradle-logo.svg"></code>
-  <code><img width="8%" title="JUnit5" src="picsandmedia/junit5-logo.svg"></code>
-  <code><img width="8%" title="Allure Report" src="picsandmedia/allure-Report-logo.svg"></code>
-  <code><img width="8%" title="Jenkins" src="picsandmedia/jenkins-logo.svg"></code>
+<code><a href="https://www.jetbrains.com/idea/"><img width="8%" title="IntelliJ IDEA" src="picsandmedia/IDEA-logo.svg"></a></code> 
+<code><a href="https://www.java.com/"><img width="8%" title="Java" src="picsandmedia/java-logo.svg"></a></code> 
+<code><a href="https://rest-assured.io/"><img width="8%" title="Rest-Assured" src="picsandmedia/rest-assured-logo.svg"></a></code> 
+<code><a href="https://gradle.org/"><img width="8%" title="Gradle" src="picsandmedia/gradle-logo.svg"></a></code> 
+<code><a href="https://junit.org/junit5/"><img width="8%" title="JUnit5" src="picsandmedia/junit5-logo.svg"></a></code> 
+<code><a href="https://allurereport.org/"><img width="8%" title="Allure Report" src="picsandmedia/allure-Report-logo.svg"></a></code> 
+<code><a href="https://www.jenkins.io/"><img width="8%" title="Jenkins" src="picsandmedia/jenkins-logo.svg"></a></code> 
  </p>
  
 Для API-тестирования используется `Rest-Assured` с применением подхода Lombok, что позволяет писать чистые и выразительные спецификации с минимальным количеством кода. 
@@ -58,18 +58,18 @@ API-тесты покрывают следующие сценарии работ
 -   [x] Запрос к несуществующему ресурсу возвращает статус-код 404
 
 
-## <a name="Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/ReqrInPrjct/))">Запуск тестов в Jenkins</a>
+## <a name="Запуск тестов в Jenkins">Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/ReqrInPrjct/)</a>
 Локально тесты запускаются командой ```gradle clean```
 
 Удалённо в ```Jenkins``` тесты запускаются командой ```clean ${TASK}```
 
-## <a name="Allure отчёт">Allure отчёт</a> 
+## <a name="Allure отчёт">[Allure](https://jenkins.autotests.cloud/job/ReqrInPrjct/1/allure/) отчёт</a> 
 
 После прогона тестов через страницу запусков в `Jenkins` есть возможность просмотреть результаты выполнения тестов в `Allure Report`
 На странице отчёта отображено общее количество запущенных тестов и процентное соотношение успешных и упавших тестов, подкреплённых диаграммой.
-Также на вкладке "Test suites" можно открыть каждый тест и посмотреть детально, на каком этапе возникла ошибка. Помимо этого по результатам теста имеется скриншот и видео из `Selenoid`.
+Также на вкладке "Test suites" можно открыть каждый тест и посмотреть детально, на каком этапе возникла ошибка. 
 
-<img src="images/scrin2.JPG" alt="Jenkinsallure1" width="950">
+<img src="picsandmedia/api-scrin-1.JPG" alt="Jenkinsallure1" width="950">
 
 
 
