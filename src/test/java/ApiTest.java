@@ -57,7 +57,7 @@ public class ApiTest extends ApiTestBase {
                         .findFirst()
                         .orElseThrow(() -> new AssertionError("Пользователь не найден!"))
         );
-        step("Проверяем имя пользователя", () -> assertEquals(hisName, foundUser.getFirst_name()));
+        step("Проверяем имя пользователя", () -> assertEquals(hisName, foundUser.getFirstName()));
     }
 
     @Test

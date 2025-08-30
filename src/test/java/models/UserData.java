@@ -1,13 +1,17 @@
 package models;
 
-import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-@Data
-public class UserData {
+    @Data
+    public class UserData {
     private Integer id;
     private String email;
-    private String first_name;
-    private String last_name;
     private String avatar;
+
+    @JsonProperty("first_name")
+    private String firstName;
+
+    @JsonProperty("last_name")
+    private String lastName;
 }
